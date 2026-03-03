@@ -176,19 +176,19 @@ const LoveStory = () => {
       year: "2018",
       title: "The First Meeting",
       desc: "It was a chance encounter at a coffee shop in Makati. Jastine was reading her favorite book, and Leronard couldn't help but ask about it. One conversation turned into hours of laughter.",
-      img: "https://images.unsplash.com/photo-1511632765486-a01980e01a18?q=80&w=2070&auto=format&fit=crop"
+      img: "/wedding-shoot/643013995_1241539467523572_2155052829853528873_n.jpg"
     },
     {
       year: "2021",
       title: "The Proposal",
       desc: "Under the starlit sky of El Nido, Leronard got down on one knee. With the sound of waves crashing gently in the background, he asked the most important question of his life.",
-      img: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=2070&auto=format&fit=crop"
+      img: "/wedding-shoot/643558320_3527729307365666_4577884895516382260_n.jpg"
     },
     {
       year: "2026",
       title: "The Beginning of Forever",
       desc: "After years of building dreams together, we are finally tying the knot. We can't wait to start this new chapter as husband and wife, surrounded by our loved ones.",
-      img: "https://images.unsplash.com/photo-1522673607200-1645062cd958?q=80&w=2070&auto=format&fit=crop"
+      img: "/wedding-shoot/644063745_1209509667835568_4084062557698984477_n.jpg"
     }
   ];
 
@@ -378,23 +378,29 @@ const Venues = () => {
 // Gallery Component
 const Gallery = () => {
   const images = [
-    { src: "https://images.unsplash.com/photo-1510076857177-7470076d4098?q=80&w=2072&auto=format&fit=crop", alt: "Couple Close Up", span: "col-span-1 row-span-2" },
-    { src: "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?q=80&w=2070&auto=format&fit=crop", alt: "Sunset Yacht", span: "col-span-1 row-span-1" },
-    { src: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?q=80&w=2070&auto=format&fit=crop", alt: "Champagne Toast", span: "col-span-1 row-span-1" },
-    { src: "https://images.unsplash.com/photo-1532712938310-34cb3958d425?q=80&w=2000&auto=format&fit=crop", alt: "Holding Hands", span: "col-span-2 row-span-1" },
-    { src: "https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?q=80&w=2070&auto=format&fit=crop", alt: "Wedding Ring", span: "col-span-1 row-span-1" },
-    { src: "https://images.unsplash.com/photo-1522673607200-1645062cd958?q=80&w=2070&auto=format&fit=crop", alt: "Couple Silhouette", span: "col-span-1 row-span-1" },
+    { src: "/wedding-shoot/641549971_25796609499961213_8639808257657264805_n.jpg", alt: "Jastine & Leronard Moment 1", span: "col-span-1 row-span-2" },
+    { src: "/wedding-shoot/641591616_2111727506307981_7286134466114876972_n.jpg", alt: "Jastine & Leronard Moment 2", span: "col-span-1 row-span-1" },
+    { src: "/wedding-shoot/641640809_2364426047389792_7909241252360473011_n.jpg", alt: "Jastine & Leronard Moment 3", span: "col-span-1 row-span-1" },
+    { src: "/wedding-shoot/642103588_1398922661547290_4702766520108614786_n.jpg", alt: "Jastine & Leronard Moment 4", span: "col-span-2 row-span-1" },
+    { src: "/wedding-shoot/642230157_1233584802174874_2340478983255891141_n.jpg", alt: "Jastine & Leronard Moment 5", span: "col-span-1 row-span-1" },
+    { src: "/wedding-shoot/642961647_1397970302085017_2005132452631351863_n.jpg", alt: "Jastine & Leronard Moment 6", span: "col-span-1 row-span-2" },
+    { src: "/wedding-shoot/643013995_1241539467523572_2155052829853528873_n.jpg", alt: "Jastine & Leronard Moment 7", span: "col-span-1 row-span-1" },
+    { src: "/wedding-shoot/643558320_3527729307365666_4577884895516382260_n.jpg", alt: "Jastine & Leronard Moment 8", span: "col-span-1 row-span-1" },
+    { src: "/wedding-shoot/644063745_1209509667835568_4084062557698984477_n.jpg", alt: "Jastine & Leronard Moment 9", span: "col-span-2 row-span-1" },
+    { src: "/wedding-shoot/644231006_759220623655508_5739970447042265428_n.jpg", alt: "Jastine & Leronard Moment 10", span: "col-span-1 row-span-1" },
+    { src: "/wedding-shoot/645011135_1446707233904604_2074592296150955005_n.jpg", alt: "Jastine & Leronard Moment 11", span: "col-span-1 row-span-1" },
+    { src: "/wedding-shoot/646322694_710176332088676_5761652165718641117_n.jpg", alt: "Jastine & Leronard Moment 12", span: "col-span-1 row-span-1" },
   ];
 
   return (
     <section className="py-24 bg-white text-black">
       <div className="max-w-7xl mx-auto px-4">
         <Reveal className="text-center mb-16 space-y-4">
-          <h2 className="text-4xl md:text-6xl text-gold">Our Journey</h2>
-          <p className="text-gray-500 uppercase tracking-widest text-sm">Moments captured in time</p>
+          <h2 className="text-4xl md:text-6xl text-gold">Our Moments</h2>
+          <p className="text-gray-500 uppercase tracking-widest text-sm">Captured in time</p>
         </Reveal>
         
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 auto-rows-[300px]">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4 auto-rows-[300px]">
           {images.map((img, i) => (
             <motion.div 
               key={i} 
@@ -703,7 +709,7 @@ export default function Home() {
           >
             <div className="absolute inset-0 border border-gold/30 transform translate-x-4 translate-y-4 transition-transform duration-500 group-hover:translate-x-6 group-hover:translate-y-6"></div>
             <Image
-              src="https://images.unsplash.com/photo-1510076857177-7470076d4098?q=80&w=2072&auto=format&fit=crop"
+              src="/wedding-shoot/644231006_759220623655508_5739970447042265428_n.jpg"
               alt="Couple Photo"
               fill
               className="object-cover grayscale hover:grayscale-0 transition-all duration-1000"
