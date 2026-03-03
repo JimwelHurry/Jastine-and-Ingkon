@@ -9,7 +9,7 @@ export async function POST(request: Request) {
 
     const { data, error } = await resend.emails.send({
       from: 'Jastine & Leronard <onboarding@resend.dev>',
-      to: ['jimwelmanguiat@gmail.com'], // Default recipient
+      to: ['jastinemanguiat1@gmail.com'], // Send to the couple
       subject: `New RSVP: ${name} - ${attending === 'yes' ? 'Accepts' : 'Declines'}`,
       html: `
         <div style="font-family: sans-serif; max-width: 600px; margin: 0 auto;">
