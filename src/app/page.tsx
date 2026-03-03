@@ -437,6 +437,39 @@ export default function Home() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
+  // RSVP Form State
+  const [rsvpStatus, setRsvpStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    attending: 'yes'
+  });
+
+  const handleRsvpSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setRsvpStatus('loading');
+
+    try {
+      const response = await fetch('/api/rsvp', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      if (response.ok) {
+        setRsvpStatus('success');
+        setFormData({ name: '', email: '', attending: 'yes' });
+      } else {
+        setRsvpStatus('error');
+      }
+    } catch (error) {
+      console.error('RSVP Error:', error);
+      setRsvpStatus('error');
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
@@ -837,53 +870,103 @@ export default function Home() {
             </p>
           </Reveal>
           
-          <motion.form 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-            className="space-y-8 bg-zinc-50 p-12 backdrop-blur-sm border border-black/10 shadow-2xl"
-          >
-            <div className="space-y-1 group">
-              <input 
-                type="text" 
-                placeholder="Full Name" 
-                className="w-full bg-transparent border-b border-gray-300 py-4 text-center focus:outline-none focus:border-gold transition-colors placeholder-gray-500 text-lg font-light text-black"
-              />
-            </div>
-            <div className="space-y-1 group">
-              <input 
-                type="email" 
-                placeholder="Email Address" 
-                className="w-full bg-transparent border-b border-gray-300 py-4 text-center focus:outline-none focus:border-gold transition-colors placeholder-gray-500 text-lg font-light text-black"
-              />
-            </div>
-            
-            <div className="flex justify-center gap-12 py-8">
-               <label className="flex items-center gap-3 cursor-pointer group">
-                 <div className="relative">
-                   <input type="radio" name="attending" className="peer sr-only" />
-                   <div className="w-5 h-5 border border-gray-400 rounded-full peer-checked:border-gold peer-checked:bg-gold transition-all"></div>
-                 </div>
-                 <span className="uppercase tracking-wider text-xs group-hover:text-gold transition-colors">Joyfully Accept</span>
-               </label>
-               <label className="flex items-center gap-3 cursor-pointer group">
-                 <div className="relative">
-                   <input type="radio" name="attending" className="peer sr-only" />
-                   <div className="w-5 h-5 border border-gray-400 rounded-full peer-checked:border-gold peer-checked:bg-gold transition-all"></div>
-                 </div>
-                 <span className="uppercase tracking-wider text-xs group-hover:text-gold transition-colors">Regretfully Decline</span>
-               </label>
-            </div>
-            
-            <motion.button 
-              whileHover={{ scale: 1.05, backgroundColor: "#d4af37", color: "#fff", borderColor: "#d4af37" }}
-              whileTap={{ scale: 0.95 }}
-              className="mt-8 px-12 py-4 bg-black text-white uppercase tracking-[0.2em] text-sm transition-all duration-300 w-full md:w-auto border border-black"
+          {rsvpStatus === 'success' ? (
+            <motion.div
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              className="bg-zinc-50 p-12 border border-gold/30 shadow-2xl text-center space-y-6"
             >
-              Confirm Attendance
-            </motion.button>
-          </motion.form>
+              <div className="w-16 h-16 bg-gold/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 text-gold">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                </svg>
+              </div>
+              <h3 className="text-3xl font-display text-gold">Thank You!</h3>
+              <p className="text-gray-600">Your RSVP has been sent successfully. We can't wait to celebrate with you!</p>
+              <button 
+                onClick={() => setRsvpStatus('idle')}
+                className="text-sm uppercase tracking-widest text-gold hover:text-black transition-colors mt-8 border-b border-gold pb-1"
+              >
+                Send another response
+              </button>
+            </motion.div>
+          ) : (
+            <motion.form 
+              onSubmit={handleRsvpSubmit}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, duration: 0.8 }}
+              className="space-y-8 bg-zinc-50 p-12 backdrop-blur-sm border border-black/10 shadow-2xl relative"
+            >
+              {rsvpStatus === 'error' && (
+                <div className="bg-red-50 text-red-600 p-4 rounded text-sm mb-4 border border-red-200">
+                  Something went wrong. Please try again later.
+                </div>
+              )}
+              
+              <div className="space-y-1 group">
+                <input 
+                  type="text" 
+                  placeholder="Full Name" 
+                  required
+                  value={formData.name}
+                  onChange={(e) => setFormData({...formData, name: e.target.value})}
+                  className="w-full bg-transparent border-b border-gray-300 py-4 text-center focus:outline-none focus:border-gold transition-colors placeholder-gray-500 text-lg font-light text-black"
+                />
+              </div>
+              <div className="space-y-1 group">
+                <input 
+                  type="email" 
+                  placeholder="Email Address" 
+                  required
+                  value={formData.email}
+                  onChange={(e) => setFormData({...formData, email: e.target.value})}
+                  className="w-full bg-transparent border-b border-gray-300 py-4 text-center focus:outline-none focus:border-gold transition-colors placeholder-gray-500 text-lg font-light text-black"
+                />
+              </div>
+              
+              <div className="flex justify-center gap-12 py-8">
+                 <label className="flex items-center gap-3 cursor-pointer group">
+                   <div className="relative">
+                     <input 
+                       type="radio" 
+                       name="attending" 
+                       value="yes"
+                       checked={formData.attending === 'yes'}
+                       onChange={(e) => setFormData({...formData, attending: 'yes'})}
+                       className="peer sr-only" 
+                     />
+                     <div className="w-5 h-5 border border-gray-400 rounded-full peer-checked:border-gold peer-checked:bg-gold transition-all"></div>
+                   </div>
+                   <span className="uppercase tracking-wider text-xs group-hover:text-gold transition-colors">Joyfully Accept</span>
+                 </label>
+                 <label className="flex items-center gap-3 cursor-pointer group">
+                   <div className="relative">
+                     <input 
+                       type="radio" 
+                       name="attending" 
+                       value="no"
+                       checked={formData.attending === 'no'}
+                       onChange={(e) => setFormData({...formData, attending: 'no'})}
+                       className="peer sr-only" 
+                     />
+                     <div className="w-5 h-5 border border-gray-400 rounded-full peer-checked:border-gold peer-checked:bg-gold transition-all"></div>
+                   </div>
+                   <span className="uppercase tracking-wider text-xs group-hover:text-gold transition-colors">Regretfully Decline</span>
+                 </label>
+              </div>
+              
+              <motion.button 
+                whileHover={{ scale: 1.05, backgroundColor: "#d4af37", color: "#fff", borderColor: "#d4af37" }}
+                whileTap={{ scale: 0.95 }}
+                disabled={rsvpStatus === 'loading'}
+                className="mt-8 px-12 py-4 bg-black text-white uppercase tracking-[0.2em] text-sm transition-all duration-300 w-full md:w-auto border border-black disabled:opacity-50 disabled:cursor-not-allowed"
+              >
+                {rsvpStatus === 'loading' ? 'Sending...' : 'Confirm Attendance'}
+              </motion.button>
+            </motion.form>
+          )}
         </div>
       </section>
 
