@@ -198,67 +198,7 @@ const LoveStory = () => {
     <section className="py-32 bg-stone-50 text-black relative overflow-hidden">
        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent"></div>
        
-       <div className="max-w-6xl mx-auto px-4">
-          <Reveal className="text-center mb-16">
-            <h2 className="text-5xl md:text-7xl mb-4 text-black">Our Love Story</h2>
-            <p className="text-gold italic text-xl">How it all began</p>
-          </Reveal>
-
-          <div className="flex flex-col md:flex-row gap-12 items-center">
-            {/* Image Display */}
-            <div className="w-full md:w-1/2 relative h-[500px] md:h-[600px]">
-              <AnimatePresence mode="wait">
-                <motion.div 
-                  key={activeStory}
-                  initial={{ opacity: 0, scale: 0.95 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 1.05 }}
-                  transition={{ duration: 0.5 }}
-                  className="relative w-full h-full overflow-hidden border-4 border-white shadow-2xl"
-                >
-                  <Image 
-                    src={stories[activeStory].img} 
-                    alt={stories[activeStory].title}
-                    fill
-                    className="object-cover"
-                  />
-                  <div className="absolute inset-0 border border-gold/20 m-4"></div>
-                </motion.div>
-              </AnimatePresence>
-            </div>
-
-            {/* Story Selector */}
-            <div className="w-full md:w-1/2 space-y-8">
-               {stories.map((story, index) => (
-                 <motion.div 
-                   key={index}
-                   onClick={() => setActiveStory(index)}
-                   className={`cursor-pointer p-8 transition-all duration-300 border-l-2 ${activeStory === index ? 'border-gold bg-white shadow-lg pl-12' : 'border-gray-200 hover:border-gold/50 hover:pl-10'}`}
-                   whileHover={{ x: 10 }}
-                 >
-                   <span className={`text-5xl font-display block mb-2 transition-colors ${activeStory === index ? 'text-gold' : 'text-gray-300'}`}>
-                     {story.year}
-                   </span>
-                   <h3 className={`text-2xl font-display mb-2 transition-colors ${activeStory === index ? 'text-black' : 'text-gray-400'}`}>
-                     {story.title}
-                   </h3>
-                   <AnimatePresence>
-                     {activeStory === index && (
-                       <motion.p 
-                         initial={{ opacity: 0, height: 0 }}
-                         animate={{ opacity: 1, height: 'auto' }}
-                         exit={{ opacity: 0, height: 0 }}
-                         className="text-gray-600 font-light leading-relaxed"
-                       >
-                         {story.desc}
-                       </motion.p>
-                     )}
-                   </AnimatePresence>
-                 </motion.div>
-               ))}
-            </div>
-          </div>
-       </div>
+  
     </section>
   );
 };
@@ -274,7 +214,7 @@ const Venues = () => {
       location: "Imatong, Pililla, Rizal",
       time: "2:30 PM",
       desc: "Witness the exchange of vows in the historic and breathtaking interiors of San Agustin Church. A sacred union blessed by tradition and grace.",
-      img: "https://images.unsplash.com/photo-1548625361-ad844f246be3?q=80&w=2070&auto=format&fit=crop",
+      img: "/church.jpeg",
       mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30904.62549157591!2d121.26864857431642!3d14.480199700000023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397e98075d92cf1%3A0x39265c3afc0a3a94!2sDiocesan%20Shrine%20and%20Parish%20of%20St.%20Mary%20Magdalene%20-%20Imatong%2C%20Pililla%2C%20Rizal%20(Diocese%20of%20Antipolo)!5e0!3m2!1sen!2sph!4v1772542231596!5m2!1sen!2sph"
     },
     {
@@ -283,7 +223,7 @@ const Venues = () => {
       location: "Manila East Rd, Pililla, Rizal",
       time: "4:30 PM",
       desc: "Celebrate the night away at Villa Lorenza Resort. Enjoy fine dining, cocktails, and music in a beautiful pavilion setting.",
-      img: "https://images.unsplash.com/photo-1540541338287-41700207dee6?q=80&w=2070&auto=format&fit=crop",
+      img: "/villa.jpeg",
       mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3863.311368064531!2d121.31885108010239!3d14.46680164991574!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397e92956384039%3A0xa7a3d2188cb4dcff!2sVilla%20Lorenza%20Resort!5e0!3m2!1sen!2sph!4v1772542206444!5m2!1sen!2sph"
     }
   ];
@@ -650,7 +590,7 @@ export default function Home() {
           style={{ y: scrollY * 0.5 }}
         >
           <Image
-            src="https://images.unsplash.com/photo-1567899378494-47b22a2ae96a?q=80&w=2070&auto=format&fit=crop"
+            src={"/hero-section.jpg"}
             alt="Luxury Yacht"
             fill
             className="object-cover opacity-60 scale-110"
@@ -815,8 +755,7 @@ export default function Home() {
             >
               {[
                 { time: "2:30 PM", event: "Ceremony", desc: "Exchange of vows on the deck" },
-                { time: "4:30 PM", event: "Cocktails", desc: "Sunset views with champagne" },
-                { time: "6:00 PM", event: "Dinner", desc: "Fine dining experience under the stars" },
+                { time: "4:30 PM", event: "Reception", desc: "Celebrate the night away at Villa Lorenza Resort." },
                 { time: "9:00 PM", event: "After Party", desc: "Music and dancing into the night" },
               ].map((item, index) => (
                 <motion.div 
