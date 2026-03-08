@@ -641,7 +641,7 @@ export default function Home() {
               April 11, 2026
             </p>
             <p className="italic text-lg font-light text-gray-400">
-              Manila Yacht Club • 2:30 PM
+              St. Magdalene Parish Pililia Rizal • 2:30 PM
             </p>
           </motion.div>
         </div>
@@ -707,7 +707,7 @@ export default function Home() {
             <Reveal className="pt-8 flex flex-col md:flex-row gap-8 items-center justify-center md:justify-start">
                <div className="text-center md:text-left group cursor-default">
                  <p className="text-3xl font-display text-black group-hover:text-gold transition-colors duration-500">The Venue</p>
-                 <p className="text-sm uppercase tracking-widest text-gold mt-2">Manila Yacht Club</p>
+                 <p className="text-sm uppercase tracking-widest text-gold mt-2">Villa Lorenza Resort</p>
                </div>
                <div className="h-px w-12 bg-black/10 md:w-px md:h-12"></div>
                <div className="text-center md:text-left group cursor-default">
