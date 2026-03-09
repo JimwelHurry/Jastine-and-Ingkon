@@ -8,7 +8,7 @@ export async function POST(request: Request) {
     const { name, email, attending } = await request.json();
 
     const { data, error } = await resend.emails.send({
-      from: 'Jastine & Leronard <onboarding@resend.dev>',
+      from: 'Jastine & Leonard <onboarding@resend.dev>',
       to: ['buanleonard44@gmail.com'], // Send to the couple
       subject: `New RSVP: ${name} - ${attending === 'yes' ? 'Accepts' : 'Declines'}`,
       html: `

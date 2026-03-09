@@ -181,7 +181,7 @@ const LoveStory = () => {
     {
       year: "2021",
       title: "The Proposal",
-      desc: "Under the starlit sky of El Nido, Leronard got down on one knee. With the sound of waves crashing gently in the background, he asked the most important question of his life.",
+      desc: "Under the starlit sky of El Nido, Leonard got down on one knee. With the sound of waves crashing gently in the background, he asked the most important question of his life.",
       img: "/wedding-shoot/643558320_3527729307365666_4577884895516382260_n.jpg"
     },
     {
@@ -1321,7 +1321,7 @@ export default function Home() {
             <a href="#" className="text-gray-500 hover:text-gold transition-colors uppercase text-xs tracking-widest">Hashtag</a>
           </div>
           <p className="text-gray-600 text-xs uppercase tracking-widest">
-            © 2026 Jastine & Leronard • Designed with Love
+            © 2026 Jastine & Leonard • Designed with Love
           </p>
         </Reveal>
       </footer>

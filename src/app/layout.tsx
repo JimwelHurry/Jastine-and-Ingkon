@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     apple: "/wedding-shoot/644231006_759220623655508_5739970447042265428_n.jpg",
   },
   openGraph: {
-    title: "Jastine & Leronard | Wedding",
+    title: "Jastine & Leonard | Wedding",
     description: "Join us for our special day on April 11, 2026.",
     url: "https://jast-ingkon.vercel.app", // Assuming a placeholder URL, will work if deployed
     siteName: "Jastine & Leronard Wedding",
@@ -29,7 +29,7 @@ export const metadata: Metadata = {
         url: "/wedding-shoot/644231006_759220623655508_5739970447042265428_n.jpg",
         width: 1200,
         height: 630,
-        alt: "Jastine & Leronard",
+        alt: "Jastine & Leonard",
       },
     ],
     locale: "en_US",
