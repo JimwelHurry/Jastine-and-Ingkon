@@ -840,7 +840,7 @@ export default function Home() {
               April 11, 2026
             </p>
             <p className="italic text-lg font-light text-gray-400">
-              Diocesan Shrine and Parish of St. Mary Magdalena • 2:30 PM
+              Diocesan Shrine and Parish of St. Mary Magdalena • 2:00 PM
             </p>
           </motion.div>
         </div>
