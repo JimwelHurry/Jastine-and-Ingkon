@@ -13,20 +13,21 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Jastine & Leronard | Wedding",
+  metadataBase: new URL("https://jast-ingkon.vercel.app"),
+  title: "Jastine & Leonard | Wedding",
   description: "Join us for our special day.",
   icons: {
-    icon: "/wedding-shoot/644231006_759220623655508_5739970447042265428_n.jpg",
-    apple: "/wedding-shoot/644231006_759220623655508_5739970447042265428_n.jpg",
+    icon: "/icon.jpg",
+    apple: "/icon.jpg",
   },
   openGraph: {
     title: "Jastine & Leonard | Wedding",
     description: "Join us for our special day on April 11, 2026.",
-    url: "https://jast-ingkon.vercel.app", // Assuming a placeholder URL, will work if deployed
+    url: "https://jast-ingkon.vercel.app",
     siteName: "Jastine & Leronard Wedding",
     images: [
       {
-        url: "/wedding-shoot/644231006_759220623655508_5739970447042265428_n.jpg",
+        url: "/opengraph-image.jpg",
         width: 1200,
         height: 630,
         alt: "Jastine & Leonard",
