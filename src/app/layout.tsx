@@ -16,23 +16,11 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://jast-ingkon.vercel.app"),
   title: "Jastine & Leonard | Wedding",
   description: "Join us for our special day.",
-  icons: {
-    icon: "/icon.jpg",
-    apple: "/icon.jpg",
-  },
   openGraph: {
     title: "Jastine & Leonard | Wedding",
     description: "Join us for our special day on April 11, 2026.",
     url: "https://jast-ingkon.vercel.app",
     siteName: "Jastine & Leronard Wedding",
-    images: [
-      {
-        url: "/opengraph-image.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Jastine & Leonard",
-      },
-    ],
     locale: "en_US",
     type: "website",
   },

@@ -365,204 +365,6 @@ const Gallery = () => {
   );
 };
 
-const Entourage = () => {
-  const principalSponsors = [
-    "Chief. Engr. Danilo Madali & Mrs. Metoshiela Madali",
-    "Mr. Arnold Indemne & Mrs. Dinah Miranda",
-    "Mr. Neil Aligam & Mrs. Lulu Guillartes",
-    "Mr. Albert Babadilla & Mrs. Charedel Babadilla",
-    "Mr. Jake Llarena & Mrs. Jenniferjun Llarena",
-    "Mr. Domingo Madali & Mrs. Anita Sinoy",
-    "Mr. Radjie Macapagal & Ms. Ana Matia Buenaventura",
-    "Mr. Leonido Salvador & Ms. Susan Ochoa",
-    "Mr. Emiliano Buan & Ms. Dianna Gonzales",
-    "Mr. Jonathan Igama & Ms. Virginia Carrasco",
-    "Mr. Percival Macalindong & Ms. Minnie Madali",
-    "Mr. Chad Tanguinod & Mrs. Denice Tanguinod",
-    "Mr. Emer Orfiano & Mrs. Neneth Orfiano",
-    "Mr. Michael Debasa & Mrs. Mary Ann Dayao",
-    "Mr. Renan Alcantara & Ms. Peng Alcantara"
-  ];
-
-  const groomsmen = [
-    "Kirt Cornito", "Malvin Gonzales", "Jimwel Manguiat", "Jaed Enriquez",
-    "Rommel Asuncion", "Johnred Bonita", "JC Buan", "RJ better",
-    "Adekei Nunag", "Ed Viterbo", "Benjie Belleza"
-  ];
-
-  const bridesmaids = [
-    "Shiloh Madali", "Angela De Castro", "Alexandra Pineda - prayer", "Tricia Cabrera",
-    "Rose Bantugon", "Aliah Paner", "Tricia Indemne", "Anjanette Indemne",
-    "Ariane Maunahan", "Angel Redondo", "Shena Regalado"
-  ];
-  
-  const secondarySponsors = [
-     { role: "Best Man", names: ["Mr. Charles Buan"] },
-     { role: "Maids of Honor", names: ["Ms. Rexinne Manguiat", "Ms. Margarita Vidal"] },
-     { role: "Candle", names: ["Ms. Kathleen Pineda", "Mr. Charles Domingo"] },
-     { role: "Veil", names: ["Khayle Pala-Pala", "Mr. Renzo Awa"] },
-     { role: "Cord", names: ["Ms. Leslie Lalap", "Mr. Jerwyn Chan"] }
-  ];
-
-  const bearers = [
-    { role: "Ring Bearer", name: "Cody Manguiat" },
-    { role: "Bible Bearer", name: "Knight Jimenez" },
-    { role: "Coin Bearer", name: "Gavin Manguiat" },
-    { role: "Here Comes The Bride Banner", names: ["Atasha Manguiat", "Sky Jimenez"] }
-  ];
-
-  const flowerGirlsBoys = [
-    "Amity Adelante", "Athena Umandap", "Zhia Llarena", 
-    "Dana Lizardo & Jacob Naverra", "Kayelie Manguiat & David Manalo",
-    "Naomi Adelante & Daniel Manalo", "Margaux Atienza & Aiden Amianes"
-  ];
-
-  return (
-    <section className="py-24 md:py-32 bg-stone-50 text-black relative">
-       {/* Background Pattern */}
-       <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gold/10 to-transparent pointer-events-none" />
-       
-      <div className="max-w-6xl mx-auto px-6 md:px-12 text-center relative z-10">
-        <Reveal>
-          <div className="mb-20">
-            <h2 className="text-4xl md:text-7xl text-gold mb-4 font-display tracking-tight">The Entourage</h2>
-            <p className="text-gray-500 italic text-lg md:text-xl font-serif">Witnesses to our Vows</p>
-            <div className="w-24 h-px bg-gold mx-auto mt-8"></div>
-          </div>
-        </Reveal>
-
-        <div className="space-y-24 md:space-y-32">
-          {/* Parents */}
-          <Reveal>
-            <div className="grid md:grid-cols-2 gap-12 md:gap-24 items-start">
-              <div className="space-y-6">
-                <h3 className="text-gold font-display text-xl uppercase tracking-[0.2em] mb-2 border-b border-gold/20 pb-4 inline-block px-8">Bride's Parents</h3>
-                <div className="space-y-2">
-                  <p className="text-2xl md:text-3xl font-serif text-gray-800">Democrito Manguiat</p>
-                  <p className="text-2xl md:text-3xl font-serif text-gray-800">Diana Darrie Manguiat</p>
-                </div>
-              </div>
-              <div className="space-y-6">
-                <h3 className="text-gold font-display text-xl uppercase tracking-[0.2em] mb-2 border-b border-gold/20 pb-4 inline-block px-8">Groom's Parents</h3>
-                <div className="space-y-2">
-                  <p className="text-2xl md:text-3xl font-serif text-gray-800">Crispulo Buan Jr.</p>
-                  <p className="text-2xl md:text-3xl font-serif text-gray-800">Miriam Nimer</p>
-                </div>
-              </div>
-            </div>
-          </Reveal>
-
-          {/* Principal Sponsors */}
-          <Reveal>
-            <div className="bg-white p-8 md:p-16 shadow-[0_0_50px_-12px_rgba(0,0,0,0.05)] border border-stone-100 rounded-sm">
-              <h3 className="text-gold font-display text-xl uppercase tracking-[0.3em] mb-12">Principal Sponsors</h3>
-              <div className="grid md:grid-cols-2 gap-x-12 gap-y-6 text-base md:text-lg font-light text-gray-600 text-left md:text-center leading-relaxed font-serif">
-                {principalSponsors.map((s, i) => (
-                  <p key={i} className="hover:text-gold transition-colors duration-300 border-b border-stone-100 pb-2 md:border-none md:pb-0">{s}</p>
-                ))}
-              </div>
-            </div>
-          </Reveal>
-
-          {/* Secondary Sponsors */}
-          <Reveal>
-             <h3 className="text-gold font-display text-xl uppercase tracking-[0.3em] mb-12">Secondary Sponsors</h3>
-             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
-               {/* Best Man & MOH - Center on Mobile, distinct layout */}
-               <div className="md:col-span-3 grid md:grid-cols-2 gap-8 mb-8">
-                  <div className="bg-stone-100/50 p-8 rounded-sm">
-                    <p className="text-gold uppercase tracking-widest text-xs mb-4 font-bold">Best Man</p>
-                    <p className="text-xl md:text-2xl font-serif text-gray-800">Mr. Charles Buan</p>
-                  </div>
-                  <div className="bg-stone-100/50 p-8 rounded-sm">
-                    <p className="text-gold uppercase tracking-widest text-xs mb-4 font-bold">Maids of Honor</p>
-                    <div className="space-y-2">
-                      <p className="text-xl md:text-2xl font-serif text-gray-800">Ms. Rexinne Manguiat</p>
-                      <p className="text-xl md:text-2xl font-serif text-gray-800">Ms. Margarita Vidal</p>
-                    </div>
-                  </div>
-               </div>
-
-               {/* Other Sponsors */}
-               {secondarySponsors.slice(2).map((s, i) => (
-                <div key={i} className="bg-white p-8 rounded-sm shadow-sm hover:shadow-md border border-gray-100 hover:border-gold/30 transition-all duration-500 group flex flex-col items-center justify-center min-h-[160px]">
-                  <p className="text-gold uppercase tracking-widest text-xs mb-4 group-hover:text-black transition-colors">{s.role}</p>
-                  <div className="space-y-2">
-                    {s.names.map((n, j) => (
-                        <p key={j} className="text-lg md:text-xl font-serif text-gray-800">{n}</p>
-                    ))}
-                  </div>
-                </div>
-              ))}
-            </div>
-          </Reveal>
-          
-           {/* Bridal Party */}
-           <Reveal>
-            <div className="relative py-12">
-               <div className="absolute inset-0 flex items-center" aria-hidden="true">
-                 <div className="w-full border-t border-gold/20"></div>
-               </div>
-               <div className="relative flex justify-center">
-                 <span className="bg-stone-50 px-6 text-gold font-display text-xl uppercase tracking-[0.3em]">The Bridal Party</span>
-               </div>
-            </div>
-
-            <div className="grid md:grid-cols-2 gap-16 md:gap-32">
-              <div className="text-center">
-                <h4 className="text-2xl font-serif italic mb-8 text-gray-400">The Groomsmen</h4>
-                <div className="space-y-4">
-                  {groomsmen.map((name, i) => (
-                    <p key={i} className="text-lg text-gray-700 font-light hover:text-gold transition-colors tracking-wide">{name}</p>
-                  ))}
-                </div>
-              </div>
-              <div className="text-center">
-                <h4 className="text-2xl font-serif italic mb-8 text-gray-400">The Bridesmaids</h4>
-                <div className="space-y-4">
-                   {bridesmaids.map((name, i) => (
-                    <p key={i} className="text-lg text-gray-700 font-light hover:text-gold transition-colors tracking-wide">{name}</p>
-                   ))}
-                </div>
-              </div>
-            </div>
-          </Reveal>
-
-          {/* Bearers & Flower Girls */}
-           <Reveal>
-            <div className="bg-stone-100/30 p-8 md:p-16 rounded-sm border border-stone-100">
-              <div className="grid md:grid-cols-2 gap-16 md:gap-24">
-                  <div className="text-center">
-                      <h3 className="text-gold font-display text-xl uppercase tracking-[0.3em] mb-10">Bearers</h3>
-                      <div className="space-y-8">
-                      {bearers.map((b, i) => (
-                          <div key={i} className="flex flex-col items-center">
-                            <p className="text-gray-400 uppercase tracking-widest text-[10px] mb-2">{b.role}</p>
-                            <p className="text-xl font-serif text-gray-800">
-                                {Array.isArray(b.names) ? b.names.join(" & ") : b.name}
-                            </p>
-                          </div>
-                      ))}
-                      </div>
-                  </div>
-                  <div className="text-center">
-                      <h3 className="text-gold font-display text-xl uppercase tracking-[0.3em] mb-10">Flower Girls & Boys</h3>
-                      <div className="space-y-4">
-                      {flowerGirlsBoys.map((name, i) => (
-                          <p key={i} className="text-lg font-serif text-gray-700">{name}</p>
-                      ))}
-                      </div>
-                  </div>
-              </div>
-            </div>
-          </Reveal>
-        </div>
-      </div>
-    </section>
-  );
-};
-
-// Invitation Component
 const Invitation = () => {
   const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
 
@@ -649,17 +451,17 @@ const Invitation = () => {
             {/* Navigation Buttons */}
             <button 
               onClick={handlePrev}
-              className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-gold transition-colors p-2 z-[90] hidden md:block"
+              className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-white hover:text-gold transition-colors p-2 z-[90] bg-black/20 backdrop-blur-sm rounded-full md:bg-transparent"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10 md:w-16 md:h-16">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 md:w-16 md:h-16">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
               </svg>
             </button>
             <button 
               onClick={handleNext}
-              className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-gold transition-colors p-2 z-[90] hidden md:block"
+              className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-white hover:text-gold transition-colors p-2 z-[90] bg-black/20 backdrop-blur-sm rounded-full md:bg-transparent"
             >
-               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10 md:w-16 md:h-16">
+               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 md:w-16 md:h-16">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
               </svg>
             </button>
@@ -1125,9 +927,6 @@ export default function Home() {
       {/* Gallery Section */}
       <Gallery />
 
-      {/* Entourage Section */}
-      <Entourage />
-
       {/* Invitation Section */}
       <Invitation />
 
@@ -1208,7 +1007,7 @@ export default function Home() {
             <h2 className="text-6xl mb-8">R.S.V.P.</h2>
             <p className="text-gray-600 mb-12 font-light">
               We would be honored by your presence.<br/>
-              Please respond by <span className="text-black border-b border-gold pb-1">March 1st, 2026</span>
+              Please respond by <span className="text-black border-b border-gold pb-1">March 20, 2026</span>
             </p>
           </Reveal>
           
