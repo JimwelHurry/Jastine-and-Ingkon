@@ -365,6 +365,399 @@ const Gallery = () => {
   );
 };
 
+const Entourage = () => {
+  const principalSponsors = [
+    "Chief. Engr. Danilo Madali & Mrs. Metoshiela Madali",
+    "Mr. Arnold Indemne & Mrs. Dinah Miranda",
+    "Mr. Neil Aligam & Mrs. Lulu Guillartes",
+    "Mr. Albert Babadilla & Mrs. Charedel Babadilla",
+    "Mr. Jake Llarena & Mrs. Jenniferjun Llarena",
+    "Mr. Domingo Madali & Mrs. Anita Sinoy",
+    "Mr. Radjie Macapagal & Ms. Ana Matia Buenaventura",
+    "Mr. Leonido Salvador & Ms. Susan Ochoa",
+    "Mr. Emiliano Buan & Ms. Dianna Gonzales",
+    "Mr. Jonathan Igama & Ms. Virginia Carrasco",
+    "Mr. Percival Macalindong & Ms. Minnie Madali",
+    "Mr. Chad Tanguinod & Mrs. Denice Tanguinod",
+    "Mr. Emer Orfiano & Mrs. Neneth Orfiano",
+    "Mr. Michael Debasa & Mrs. Mary Ann Dayao",
+    "Mr. Renan Alcantara & Ms. Peng Alcantara"
+  ];
+
+  const groomsmen = [
+    "Kirt Cornito", "Malvin Gonzales", "Jimwel Manguiat", "Jaed Enriquez",
+    "Rommel Asuncion", "Johnred Bonita", "JC Buan", "RJ better",
+    "Adekei Nunag", "Ed Viterbo", "Benjie Belleza"
+  ];
+
+  const bridesmaids = [
+    "Shiloh Madali", "Angela De Castro", "Alexandra Pineda - prayer", "Tricia Cabrera",
+    "Rose Bantugon", "Aliah Paner", "Tricia Indemne", "Anjanette Indemne",
+    "Ariane Maunahan", "Angel Redondo", "Shena Regalado"
+  ];
+  
+  const secondarySponsors = [
+     { role: "Best Man", names: ["Mr. Charles Buan"] },
+     { role: "Maids of Honor", names: ["Ms. Rexinne Manguiat", "Ms. Margarita Vidal"] },
+     { role: "Candle", names: ["Ms. Kathleen Pineda", "Mr. Charles Domingo"] },
+     { role: "Veil", names: ["Khayle Pala-Pala", "Mr. Renzo Awa"] },
+     { role: "Cord", names: ["Ms. Leslie Lalap", "Mr. Jerwyn Chan"] }
+  ];
+
+  const bearers = [
+    { role: "Ring Bearer", name: "Cody Manguiat" },
+    { role: "Bible Bearer", name: "Knight Jimenez" },
+    { role: "Coin Bearer", name: "Gavin Manguiat" },
+    { role: "Here Comes The Bride Banner", names: ["Atasha Manguiat", "Sky Jimenez"] }
+  ];
+
+  const flowerGirlsBoys = [
+    "Amity Adelante", "Athena Umandap", "Zhia Llarena", 
+    "Dana Lizardo & Jacob Naverra", "Kayelie Manguiat & David Manalo",
+    "Naomi Adelante & Daniel Manalo", "Margaux Atienza & Aiden Amianes"
+  ];
+
+  return (
+    <section className="py-24 md:py-32 bg-stone-50 text-black relative">
+       {/* Background Pattern */}
+       <div className="absolute inset-0 opacity-30 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-gold/10 to-transparent pointer-events-none" />
+       
+      <div className="max-w-6xl mx-auto px-6 md:px-12 text-center relative z-10">
+        <Reveal>
+          <div className="mb-20">
+            <h2 className="text-4xl md:text-7xl text-gold mb-4 font-display tracking-tight">The Entourage</h2>
+            <p className="text-gray-500 italic text-lg md:text-xl font-serif">Witnesses to our Vows</p>
+            <div className="w-24 h-px bg-gold mx-auto mt-8"></div>
+          </div>
+        </Reveal>
+
+        <div className="space-y-24 md:space-y-32">
+          {/* Parents */}
+          <Reveal>
+            <div className="grid md:grid-cols-2 gap-12 md:gap-24 items-start">
+              <div className="space-y-6">
+                <h3 className="text-gold font-display text-xl uppercase tracking-[0.2em] mb-2 border-b border-gold/20 pb-4 inline-block px-8">Bride's Parents</h3>
+                <div className="space-y-2">
+                  <p className="text-2xl md:text-3xl font-serif text-gray-800">Democrito Manguiat</p>
+                  <p className="text-2xl md:text-3xl font-serif text-gray-800">Diana Darrie Manguiat</p>
+                </div>
+              </div>
+              <div className="space-y-6">
+                <h3 className="text-gold font-display text-xl uppercase tracking-[0.2em] mb-2 border-b border-gold/20 pb-4 inline-block px-8">Groom's Parents</h3>
+                <div className="space-y-2">
+                  <p className="text-2xl md:text-3xl font-serif text-gray-800">Crispulo Buan Jr.</p>
+                  <p className="text-2xl md:text-3xl font-serif text-gray-800">Miriam Nimer</p>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+
+          {/* Principal Sponsors */}
+          <Reveal>
+            <div className="bg-white p-8 md:p-16 shadow-[0_0_50px_-12px_rgba(0,0,0,0.05)] border border-stone-100 rounded-sm">
+              <h3 className="text-gold font-display text-xl uppercase tracking-[0.3em] mb-12">Principal Sponsors</h3>
+              <div className="grid md:grid-cols-2 gap-x-12 gap-y-6 text-base md:text-lg font-light text-gray-600 text-left md:text-center leading-relaxed font-serif">
+                {principalSponsors.map((s, i) => (
+                  <p key={i} className="hover:text-gold transition-colors duration-300 border-b border-stone-100 pb-2 md:border-none md:pb-0">{s}</p>
+                ))}
+              </div>
+            </div>
+          </Reveal>
+
+          {/* Secondary Sponsors */}
+          <Reveal>
+             <h3 className="text-gold font-display text-xl uppercase tracking-[0.3em] mb-12">Secondary Sponsors</h3>
+             <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-12">
+               {/* Best Man & MOH - Center on Mobile, distinct layout */}
+               <div className="md:col-span-3 grid md:grid-cols-2 gap-8 mb-8">
+                  <div className="bg-stone-100/50 p-8 rounded-sm">
+                    <p className="text-gold uppercase tracking-widest text-xs mb-4 font-bold">Best Man</p>
+                    <p className="text-xl md:text-2xl font-serif text-gray-800">Mr. Charles Buan</p>
+                  </div>
+                  <div className="bg-stone-100/50 p-8 rounded-sm">
+                    <p className="text-gold uppercase tracking-widest text-xs mb-4 font-bold">Maids of Honor</p>
+                    <div className="space-y-2">
+                      <p className="text-xl md:text-2xl font-serif text-gray-800">Ms. Rexinne Manguiat</p>
+                      <p className="text-xl md:text-2xl font-serif text-gray-800">Ms. Margarita Vidal</p>
+                    </div>
+                  </div>
+               </div>
+
+               {/* Other Sponsors */}
+               {secondarySponsors.slice(2).map((s, i) => (
+                <div key={i} className="bg-white p-8 rounded-sm shadow-sm hover:shadow-md border border-gray-100 hover:border-gold/30 transition-all duration-500 group flex flex-col items-center justify-center min-h-[160px]">
+                  <p className="text-gold uppercase tracking-widest text-xs mb-4 group-hover:text-black transition-colors">{s.role}</p>
+                  <div className="space-y-2">
+                    {s.names.map((n, j) => (
+                        <p key={j} className="text-lg md:text-xl font-serif text-gray-800">{n}</p>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+          
+           {/* Bridal Party */}
+           <Reveal>
+            <div className="relative py-12">
+               <div className="absolute inset-0 flex items-center" aria-hidden="true">
+                 <div className="w-full border-t border-gold/20"></div>
+               </div>
+               <div className="relative flex justify-center">
+                 <span className="bg-stone-50 px-6 text-gold font-display text-xl uppercase tracking-[0.3em]">The Bridal Party</span>
+               </div>
+            </div>
+
+            <div className="grid md:grid-cols-2 gap-16 md:gap-32">
+              <div className="text-center">
+                <h4 className="text-2xl font-serif italic mb-8 text-gray-400">The Groomsmen</h4>
+                <div className="space-y-4">
+                  {groomsmen.map((name, i) => (
+                    <p key={i} className="text-lg text-gray-700 font-light hover:text-gold transition-colors tracking-wide">{name}</p>
+                  ))}
+                </div>
+              </div>
+              <div className="text-center">
+                <h4 className="text-2xl font-serif italic mb-8 text-gray-400">The Bridesmaids</h4>
+                <div className="space-y-4">
+                   {bridesmaids.map((name, i) => (
+                    <p key={i} className="text-lg text-gray-700 font-light hover:text-gold transition-colors tracking-wide">{name}</p>
+                   ))}
+                </div>
+              </div>
+            </div>
+          </Reveal>
+
+          {/* Bearers & Flower Girls */}
+           <Reveal>
+            <div className="bg-stone-100/30 p-8 md:p-16 rounded-sm border border-stone-100">
+              <div className="grid md:grid-cols-2 gap-16 md:gap-24">
+                  <div className="text-center">
+                      <h3 className="text-gold font-display text-xl uppercase tracking-[0.3em] mb-10">Bearers</h3>
+                      <div className="space-y-8">
+                      {bearers.map((b, i) => (
+                          <div key={i} className="flex flex-col items-center">
+                            <p className="text-gray-400 uppercase tracking-widest text-[10px] mb-2">{b.role}</p>
+                            <p className="text-xl font-serif text-gray-800">
+                                {Array.isArray(b.names) ? b.names.join(" & ") : b.name}
+                            </p>
+                          </div>
+                      ))}
+                      </div>
+                  </div>
+                  <div className="text-center">
+                      <h3 className="text-gold font-display text-xl uppercase tracking-[0.3em] mb-10">Flower Girls & Boys</h3>
+                      <div className="space-y-4">
+                      {flowerGirlsBoys.map((name, i) => (
+                          <p key={i} className="text-lg font-serif text-gray-700">{name}</p>
+                      ))}
+                      </div>
+                  </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+};
+
+// Invitation Component
+const Invitation = () => {
+  const [selectedIndex, setSelectedIndex] = useState<number | null>(null);
+
+  const images = Array.from({ length: 8 }, (_, i) => ({
+    src: `/invitation/${i + 1}.jpeg`,
+    alt: `Invitation Page ${i + 1}`
+  }));
+
+  const handleNext = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    if (selectedIndex !== null) {
+      setSelectedIndex((prev) => (prev! + 1) % images.length);
+    }
+  };
+
+  const handlePrev = (e?: React.MouseEvent) => {
+    e?.stopPropagation();
+    if (selectedIndex !== null) {
+      setSelectedIndex((prev) => (prev! - 1 + images.length) % images.length);
+    }
+  };
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (selectedIndex === null) return;
+      if (e.key === 'ArrowRight') handleNext();
+      if (e.key === 'ArrowLeft') handlePrev();
+      if (e.key === 'Escape') setSelectedIndex(null);
+    };
+
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [selectedIndex]);
+
+  return (
+    <section id="invitation" className="py-24 bg-zinc-900 text-white relative border-t border-white/5">
+      <div className="max-w-6xl mx-auto px-4">
+        <Reveal className="text-center mb-16 space-y-4">
+          <h2 className="text-4xl md:text-6xl text-gold font-display">Official Invitation</h2>
+          <p className="text-gray-400 uppercase tracking-widest text-sm">You are cordially invited</p>
+        </Reveal>
+        
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {images.map((img, i) => (
+            <Reveal key={i} className="group relative aspect-[3/4] overflow-hidden rounded-lg border border-white/10 shadow-2xl cursor-pointer">
+              <div onClick={() => setSelectedIndex(i)} className="w-full h-full relative">
+                <Image
+                  src={img.src}
+                  alt={img.alt}
+                  fill
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/40 transition-colors duration-500 flex items-center justify-center">
+                  <span className="opacity-0 group-hover:opacity-100 transform translate-y-4 group-hover:translate-y-0 transition-all duration-500 text-white font-light tracking-widest uppercase text-xs bg-black/50 px-6 py-3 rounded-full border border-white/20 backdrop-blur-sm hover:bg-gold hover:text-black hover:border-gold">
+                    View
+                  </span>
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+
+      {/* Lightbox Modal */}
+      <AnimatePresence>
+        {selectedIndex !== null && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-[80] bg-black/95 backdrop-blur-xl flex items-center justify-center p-4 md:p-12"
+            onClick={() => setSelectedIndex(null)}
+          >
+            {/* Close Button */}
+            <button 
+              onClick={() => setSelectedIndex(null)}
+              className="absolute top-4 right-4 md:top-8 md:right-8 text-white/50 hover:text-white transition-colors p-2 z-[90]"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-8 h-8 md:w-10 md:h-10">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+
+            {/* Navigation Buttons */}
+            <button 
+              onClick={handlePrev}
+              className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-gold transition-colors p-2 z-[90] hidden md:block"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10 md:w-16 md:h-16">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
+              </svg>
+            </button>
+            <button 
+              onClick={handleNext}
+              className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 text-white/50 hover:text-gold transition-colors p-2 z-[90] hidden md:block"
+            >
+               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-10 h-10 md:w-16 md:h-16">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+              </svg>
+            </button>
+
+            <motion.div
+              key={selectedIndex}
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="relative w-full h-full flex items-center justify-center"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <img 
+                src={images[selectedIndex].src} 
+                alt={images[selectedIndex].alt}
+                className="max-w-full max-h-full object-contain rounded-sm shadow-2xl border border-white/10"
+              />
+              
+              {/* Mobile Navigation Overlays */}
+              <div className="absolute inset-y-0 left-0 w-1/4 z-[85] md:hidden" onClick={handlePrev}></div>
+              <div className="absolute inset-y-0 right-0 w-1/4 z-[85] md:hidden" onClick={handleNext}></div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </section>
+  );
+};
+
+const WeddingDetails = () => {
+  return (
+    <section className="py-24 bg-zinc-900 text-white">
+      <div className="max-w-4xl mx-auto px-4 text-center space-y-16">
+        <Reveal>
+          <h2 className="text-4xl md:text-6xl text-gold mb-12 font-display">Important Details</h2>
+        </Reveal>
+
+        <Reveal>
+          <h3 className="text-2xl font-display mb-4 text-gold">Attire</h3>
+          <p className="mb-8 text-gray-300">
+            Please note that our celebration is a semi-formal event, and we kindly request that guests dress accordingly.
+          </p>
+          <div className="grid md:grid-cols-2 gap-8 text-left max-w-3xl mx-auto bg-black/30 p-8 rounded-lg border border-white/10">
+            <div>
+              <p className="font-medium text-gold mb-2">✨ Gentleman Sponsors</p>
+              <p className="text-sm text-gray-400 mb-6">Black suit, white inner, black tie, black shoes</p>
+              
+              <p className="font-medium text-gold mb-2">🤵 Male Guests</p>
+              <p className="text-sm text-gray-400">Black semi-formal attire (long-sleeved shirt or polo shirt)</p>
+            </div>
+            <div>
+              <p className="font-medium text-gold mb-2">✨ Lady Sponsors</p>
+              <p className="text-sm text-gray-400 mb-6">Blush Pink Gown</p>
+              
+              <p className="font-medium text-gold mb-2">💃 Female Guests</p>
+              <p className="text-sm text-gray-400">Black dress (mini, long, or jumpsuit)</p>
+            </div>
+          </div>
+          <p className="mt-6 text-sm text-red-400 italic">
+            Kindly avoid: sando, shorts, slippers, and colors outside our motif.
+          </p>
+        </Reveal>
+
+        <Reveal>
+          <div className="grid md:grid-cols-2 gap-12">
+            <div className="bg-white/5 p-8 rounded-lg border border-white/5">
+              <h3 className="text-xl font-display mb-4 text-gold">Adults-Only Celebration</h3>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                We love all of our friends’ and families’ children; however, due to space limitations, 
+                we are unable to accommodate underage guests on our wedding day, with the exception 
+                of children in the wedding entourage. We hope you take this opportunity to relax 
+                and enjoy the celebration with us.
+              </p>
+            </div>
+            <div className="bg-white/5 p-8 rounded-lg border border-white/5">
+              <h3 className="text-xl font-display mb-4 text-gold">Unplugged Ceremony</h3>
+              <p className="text-gray-300 text-sm leading-relaxed">
+                Our official photographers and videographers will be capturing every moment of our ceremony. 
+                We kindly ask for your joyful smiles without the distraction of electronic devices. 
+                Please keep phones and cameras away until we tie the knot.
+              </p>
+            </div>
+          </div>
+        </Reveal>
+
+        <Reveal>
+          <h3 className="text-2xl font-display mb-4 text-gold">A Note on Gifts</h3>
+          <p className="text-gray-300 italic max-w-xl mx-auto text-lg font-light">
+            "With all that we have, we are truly blessed. Your presence and prayers are all that we request. 
+            But if you still wish to give, a monetary gift is what we kindly suggest."
+          </p>
+        </Reveal>
+      </div>
+    </section>
+  );
+};
+
 export default function Home() {
   const [scrollY, setScrollY] = useState(0);
   const { scrollYProgress } = useScroll();
@@ -525,7 +918,7 @@ export default function Home() {
               </svg>
             </button>
             <div className="flex flex-col items-center gap-8 text-2xl font-display text-white">
-              {['Home', 'Story', 'Details', 'RSVP'].map((item) => (
+              {['Home', 'Story', 'Invitation', 'Details', 'RSVP'].map((item) => (
                 <a 
                   key={item}
                   href={`#${item.toLowerCase()}`}
@@ -558,6 +951,10 @@ export default function Home() {
             <span className="absolute -bottom-2 left-0 w-0 h-px bg-gold transition-all duration-300 group-hover:w-full"></span>
           </a>
           <span className="text-2xl font-display text-gold px-4 cursor-default whitespace-nowrap">J & L</span>
+          <a href="#invitation" className="hover:text-gold transition-colors relative group">
+            Invitation
+            <span className="absolute -bottom-2 left-0 w-0 h-px bg-gold transition-all duration-300 group-hover:w-full"></span>
+          </a>
           <a href="#details" className="hover:text-gold transition-colors relative group">
             Details
             <span className="absolute -bottom-2 left-0 w-0 h-px bg-gold transition-all duration-300 group-hover:w-full"></span>
@@ -727,6 +1124,12 @@ export default function Home() {
 
       {/* Gallery Section */}
       <Gallery />
+
+      {/* Entourage Section */}
+      <Entourage />
+
+      {/* Invitation Section */}
+      <Invitation />
 
       {/* Itinerary Section */}
       <section id="details" className="py-32 bg-zinc-950 text-white relative">
