@@ -212,7 +212,7 @@ const Venues = () => {
       type: "Ceremony",
       name: "Diocesan Shrine and Parish of St. Mary Magdalene",
       location: "Imatong, Pililla, Rizal",
-      time: "2:30 PM",
+      time: "2:00 PM",
       desc: "Witness the exchange of vows in the historic and breathtaking interiors of San Agustin Church. A sacred union blessed by tradition and grace.",
       img: "/church.jpeg",
       mapUrl: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d30904.62549157591!2d121.26864857431642!3d14.480199700000023!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3397e98075d92cf1%3A0x39265c3afc0a3a94!2sDiocesan%20Shrine%20and%20Parish%20of%20St.%20Mary%20Magdalene%20-%20Imatong%2C%20Pililla%2C%20Rizal%20(Diocese%20of%20Antipolo)!5e0!3m2!1sen!2sph!4v1772542231596!5m2!1sen!2sph"
@@ -956,7 +956,7 @@ export default function Home() {
               className="space-y-24"
             >
               {[
-                { time: "2:30 PM", event: "Ceremony", desc: "Exchange of vows on the deck" },
+                { time: "2:00 PM", event: "Ceremony", desc: "Exchange of vows on the deck" },
                 { time: "4:30 PM", event: "Reception", desc: "Celebrate the night away at Villa Lorenza Resort." },
                 { time: "9:00 PM", event: "After Party", desc: "Music and dancing into the night" },
               ].map((item, index) => (
